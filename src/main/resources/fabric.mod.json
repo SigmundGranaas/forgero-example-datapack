@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "forgero-example-datapack-fabric",
   "version": "${version}",
 
   "name": "Example Mod",
@@ -22,17 +22,15 @@
       "net.fabricmc.example.ExampleMod"
     ]
   },
-  "mixins": [
-    "modid.mixins.json"
-  ],
-
   "depends": {
     "fabricloader": ">=0.14.11",
-    "fabric-api": "*",
     "minecraft": "~1.19.3",
     "java": ">=17"
   },
   "suggests": {
-    "another-mod": "*"
-  }
+    "forgero": "*"
+  },
+  "custom": {
+    "forgeroResource": true
+    }
 }
