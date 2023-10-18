@@ -18,7 +18,7 @@ For setup instructions please see the [fabric wiki page](https://fabricmc.net/wi
 
 You're good to go! Enjoy, and good luck, making a Forgero extension pack!
 
-## Some explaining
+## Materials
 
 Forgero is split into modules called packs. Even base forgero has these packs thats why you can disable basically everything from forgero in the settings. The packs from base Forgero also provide a good example when you want to make something yourself. 
 
@@ -33,6 +33,20 @@ If the material has a parent it means it inherints stats from it, as example I p
 Properties are basically stats of the item. More of this is explained on the wiki. 
 
 The palette file consists of 7 different colours which are colorcoded to the material itself. The system uses this to create the textures, do keep in mind that a dark tone around 20/30 is needed to let it fit with vanilla minecrafts dark edges. It doesnt matter if the palette is sorted by colour as the system will choose what to pick for which pixel very carefully. 
+
+## Tools/schematics
+
+Just like materials tools also have their own Type, Parent, Properties etc. But instead of having a 7 color palette the tool uses a model file in data. That model file refers to png files in assets. The grayscaled png file then determines the shape/look of the tool. 
+
+Model files are a bit complicated. Take a look at the one in this pack. It has a model for the axe head, has a order in it (basically which layer it is, a low number will be overriden by a higher number) and a palette. The palette is pretty important, as it defines with which material type this tool can be made (this needs to be the same in the schematic file or it won't work). 
+
+The material/upgrade and the dye slot are also set up the same as the main model. These have a higher order meaning the override the main file when used/upgraded. 
+
+To let these work models work we need to target them. This specifies when to use them, what kind of model it is and which template to use (template refers to the name of the models). Once again the type here needs to match the palette and you need to specific the schematic so the system knows you make this when using a axe_head_schematic. THE TARGETS NEED TO BE CAPSLOCK!!!!!!!!!!
+
+ModelType would be BASED_COMPOSITE for tools and UPGRADE for upgrade slots. 
+
+To get a feeling for this look into the main forgero repo or use or discord to ask questions down below. 
 
 ## Discord
 
