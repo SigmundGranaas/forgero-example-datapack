@@ -1,5 +1,6 @@
 package net.fabricmc.example;
 
+import com.sigmundgranaas.forgero.fabric.resources.FabricPackFinder;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
