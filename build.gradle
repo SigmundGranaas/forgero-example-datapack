@@ -8,6 +8,7 @@ repositories {
 	maven { url = "https://maven.sigmundgranaas.com/repository/snapshots/" }
 	maven { url "https://api.modrinth.com/maven" }
 	maven { url "https://cursemaven.com" }
+	mavenLocal()
 }
 
 sourceCompatibility = JavaVersion.VERSION_17
@@ -27,9 +28,9 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
 	// Forgero
-	modImplementation "com.sigmundgranaas:forgero-fabric-core:${project.forgero_version}"
+	modImplementation("com.sigmundgranaas:forgero-fabric-core:${project.forgero_version}")
+	modImplementation("com.sigmundgranaas:minecraft-common:${project.forgero_version}")
 	implementation "com.sigmundgranaas:forgero-core:${project.forgero_version}"
-
 }
 remapJar{
 	addNestedDependencies = true

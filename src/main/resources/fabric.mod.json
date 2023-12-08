@@ -17,6 +17,9 @@
   "entrypoints": {
     "main": [
       "net.fabricmc.example.ExampleMod"
+    ],
+    "forgeroInitialized": [
+      "net.fabricmc.example.ExampleMod"
     ]
   },
   "depends": {

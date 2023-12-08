@@ -1,11 +1,15 @@
 package net.fabricmc.example;
 
-import com.sigmundgranaas.forgero.fabric.resources.FabricPackFinder;
+import com.sigmundgranaas.forgero.core.state.Identifiable;
+import com.sigmundgranaas.forgero.fabric.api.entrypoint.ForgeroInitializedEntryPoint;
+import com.sigmundgranaas.forgero.minecraft.common.service.StateService;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class ExampleMod implements ModInitializer {
+import java.util.function.Supplier;
+
+public class ExampleMod implements ModInitializer, ForgeroInitializedEntryPoint {
 	public static final String MOD_ID = "modid";
 
 	// This logger is used to write text to the console and the log file.
@@ -20,5 +24,15 @@ public class ExampleMod implements ModInitializer {
 		// Proceed with mild caution.
 
 		LOGGER.info("Hello from a Forgero extension pack!");
+	}
+
+	@Override
+	public void onInitialized(StateService service) {
+		LOGGER.info("Hello from an initialized Forgero! Here are all registered and initialized items managed by Forgero:");
+		service.all()
+				.stream()
+				.map(Supplier::get)
+				.map(Identifiable::identifier)
+				.forEach(LOGGER::info);
 	}
 }
