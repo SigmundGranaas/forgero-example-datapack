@@ -27,14 +27,20 @@ dependencies {
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-	// Forgero
-	modImplementation("com.sigmundgranaas:forgero-fabric-core:${project.forgero_version}")
-	modImplementation("com.sigmundgranaas:minecraft-common:${project.forgero_version}")
-	implementation "com.sigmundgranaas:forgero-core:${project.forgero_version}"
+	// Forgero all in one. This includes all Forgero modules
+	modImplementation("com.sigmundgranaas:forgero-fabric:${project.forgero_version}")
+
+	// If you want only a select set of content modules (or none), you can pick individual modules like this:
+	// forgero-fabric-core is required to run Forgero
+	// modImplementation("com.sigmundgranaas:forgero-fabric-core:${project.forgero_version}")
+	// modImplementation("com.sigmundgranaas:forgero-vanilla:${project.forgero_version}")
+	// modImplementation("com.sigmundgranaas:forgero-extended:${project.forgero_version}")
 }
+
 remapJar{
 	addNestedDependencies = true
 }
+
 processResources {
 	inputs.property "version", project.version
 
