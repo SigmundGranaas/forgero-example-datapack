@@ -1,0 +1,24 @@
+{
+  "name": "oak",
+  "namespace": "minecraft",
+  "priority": 6,
+  "properties": {
+    "attributes": [
+      {
+        "id": "forgero-new-attribute-durability",
+        "type": "DURABILITY",
+        "context": "COMPOSITE",
+        "value": 100
+      },
+      {
+        "id": "wood-attack_damage-composite",
+        "type": "ATTACK_DAMAGE",
+        "value": 5,
+        "context": "COMPOSITE",
+        "order": "BASE",
+        "operation": "ADDITION",
+        "priority": 5
+      }
+    ]
+  }
+}

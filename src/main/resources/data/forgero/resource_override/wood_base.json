@@ -1,0 +1,34 @@
+{
+  "name": "wood_base",
+  "namespace": "minecraft",
+  "priority": 6,
+  "properties": {
+    "attributes": [
+      {
+        "id": "wood-attack_damage-composite",
+        "type": "ATTACK_DAMAGE",
+        "value": 10,
+        "context": "COMPOSITE",
+        "order": "BASE",
+        "operation": "ADDITION",
+        "priority": 1
+      }
+    ],
+    "features": [
+      {
+        "type": "minecraft:block_breaking",
+        "selector": {
+          "type": "forgero:single"
+        },
+        "speed": "forgero:instant",
+        "predicate": {
+          "type": "forgero:random",
+          "seed": ["world_time", "block_pos"],
+          "value": 0.5
+        },
+        "title": "feature.forgero.random_insta_break.title",
+        "description": "feature.forgero.random_insta_break.description"
+      }
+    ]
+  }
+}
