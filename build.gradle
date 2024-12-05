@@ -1,5 +1,5 @@
 plugins {
-	id "fabric-loom" version "1.2.5" apply true
+	id "fabric-loom" version "1.7-SNAPSHOT" apply true
 	id 'maven-publish'
 }
 
@@ -11,6 +11,13 @@ repositories {
 	maven {
 		name "forgeroRepositoryReleases"
 		url "https://maven.sigmundgranaas.com/snapshots"
+	}
+	maven {
+		name = 'Jamieswhiteshirt'
+		url = "https://maven.jamieswhiteshirt.com/libs-release"
+		content {
+			includeGroup "com.jamieswhiteshirt"
+		}
 	}
 	maven { url "https://api.modrinth.com/maven" }
 	maven { url "https://cursemaven.com" }
@@ -38,7 +45,7 @@ dependencies {
 
 	// If you want only a select set of content modules (or none), you can pick individual modules like this:
 	// forgero-fabric-core is required to run Forgero
-	// modImplementation("com.sigmundgranaas:forgero-fabric-core:${project.forgero_version}")
+	modImplementation("com.sigmundgranaas:forgero-fabric-core:${project.forgero_version}")
 	// modImplementation("com.sigmundgranaas:forgero-vanilla:${project.forgero_version}")
 	// modImplementation("com.sigmundgranaas:forgero-extended:${project.forgero_version}")
 }
